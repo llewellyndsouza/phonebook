@@ -1,0 +1,19 @@
+.alert {
+  border: 2px solid;
+  text-align: center;
+}
+
+.success {
+  border-color: #93dd93;
+  background-color: #93dd9380;
+}
+
+.info{
+  border-color: #ddd693;
+  background-color: #ddd69380;
+}
+
+.error{
+  border-color: #dd9393;
+  background-color: #dd939380;
+} 

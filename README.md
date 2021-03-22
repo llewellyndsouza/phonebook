@@ -1,6 +1,9 @@
 # Phonebook App
 
-Run the following
+Split from FullStackOpen (https://github.com/llewellyndsouza/FullStackOpen.git)
 
-npm run start
-npm run server
+## Run the following
+
+- npm run start
+- npm run server
+
