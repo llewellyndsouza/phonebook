@@ -9,14 +9,18 @@ const DeleteButton = ({ id, persons, setPersons, setNotification }) => {
             .deleteNumber(id)
             .then((success) => {
               console.log(success);
+              setNotification({ message: `${persons.find(p => p.id === id).name} deleted on server`, type: "info" });
+              setTimeout(() => {
+                setNotification({ message: null, type: null });
+              }, 5000);
               setPersons(persons.filter((p) => p.id !== id));
             })
             .catch((err) => {
               setNotification({ message: `${persons.find(p => p.id === id).name} already deleted on server`, type: "error" });
-              setPersons(persons.filter((p) => p.id !== id));
               setTimeout(() => {
                 setNotification({ message: null, type: null });
               }, 5000);
+              setPersons(persons.filter((p) => p.id !== id));
             });
         }
       }}
