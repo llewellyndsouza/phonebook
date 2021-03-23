@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3001/persons";
+const baseUrl = "/persons";
 
 const getAll = () => {
   const request = axios.get(baseUrl);
@@ -24,4 +24,5 @@ const deleteNumber = (id) => {
   return request.then((response) => response.data);
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { getAll, addNew, updateNumber, deleteNumber };
