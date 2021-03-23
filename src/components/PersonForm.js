@@ -40,7 +40,7 @@ const PersonForm = (props) => {
               setNotification({message:null, type:null})
             }, 5000);
           }).catch(err=>{
-            setNotification({message:`${newName} has already been removed from server`, type:"error"});
+            setNotification({message:`${newName} has already been removed from server`, type:"error"}); //check this
             setTimeout(() => {
               setNotification({message:null, type:null})
             }, 5000);            
@@ -52,6 +52,12 @@ const PersonForm = (props) => {
         .then((contact) => {
           setPersons(persons.concat(contact))
           setNotification({message:`Added ${newName}`, type:"success"});
+          setTimeout(() => {
+            setNotification({message:null, type:null})
+          }, 5000);
+        }).catch(err=>{
+          console.log(err.response);
+          setNotification({message:`${err.response.data.error}`, type:"error"});
           setTimeout(() => {
             setNotification({message:null, type:null})
           }, 5000);
